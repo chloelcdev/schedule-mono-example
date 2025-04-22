@@ -1,7 +1,7 @@
 using MelonLoader;
 using S1API;
 
-[assembly: MelonInfo(typeof(ManorMod.ExampleMod), ManorMod.BuildInfo.Name, ManorMod.BuildInfo.Version, ManorMod.BuildInfo.Author, ManorMod.BuildInfo.DownloadLink)]
+[assembly: MelonInfo(typeof(ManorMod.MainMod), ManorMod.BuildInfo.Name, ManorMod.BuildInfo.Version, ManorMod.BuildInfo.Author, ManorMod.BuildInfo.DownloadLink)]
 [assembly: MelonColor()]
 [assembly: MelonGame("TVGS", "Schedule I")]
 
@@ -17,7 +17,7 @@ namespace ManorMod
         public const string DownloadLink = null;
     }
 
-    public class ExampleMod : MelonMod
+    public class MainMod : MelonMod
     {
 
     }
