@@ -1,0 +1,10 @@
+.idea/
+*.dll
+*.zip
+obj/
+bin/
+*.vsidx
+*.user
+local.*
+*.bin
+.vs/*/CopilotIndices

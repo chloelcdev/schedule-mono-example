@@ -1,34 +1,24 @@
 using MelonLoader;
-using HarmonyLib;
-using ScheduleOne.Product;
-using ScheduleOne.PlayerScripts;
+using S1API;
 
-[assembly: MelonInfo(typeof(ExampleMod.ExampleMod), ExampleMod.BuildInfo.Name, ExampleMod.BuildInfo.Version, ExampleMod.BuildInfo.Author, ExampleMod.BuildInfo.DownloadLink)]
+[assembly: MelonInfo(typeof(ManorMod.ExampleMod), ManorMod.BuildInfo.Name, ManorMod.BuildInfo.Version, ManorMod.BuildInfo.Author, ManorMod.BuildInfo.DownloadLink)]
 [assembly: MelonColor()]
 [assembly: MelonGame("TVGS", "Schedule I")]
 
-namespace ExampleMod
+namespace ManorMod
 {
     public static class BuildInfo
     {
-        public const string Name = "Example";
+        public const string Name = "ManorMod";
         public const string Description = "";
-        public const string Author = "XOWithSauce";
+        public const string Author = "ChloeNow";
         public const string Company = null;
-        public const string Version = "1.0";
+        public const string Version = "0.9.0";
         public const string DownloadLink = null;
     }
 
     public class ExampleMod : MelonMod
     {
-        [HarmonyPatch(typeof(Player), "ConsumeProduct")]
-        public static class Player_ConsumeProduct_Patch
-        {
-            public static bool Prefix(Player __instance, ProductItemInstance product)
-            {
-                MelonLogger.Msg("Product is being consumed");
-                return true;
-            }
-        }
+
     }
 }
