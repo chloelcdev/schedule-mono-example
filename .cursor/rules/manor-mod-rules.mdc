@@ -1,0 +1,12 @@
+---
+description: writing code
+globs: 
+alwaysApply: false
+---
+Don't use try/catch at all unless I explicitly say to.
+Don't do any logging unless I explicitly say to.
+don't use brackets for things if they are pretty when one-lined.
+
+
+
+Don't do any nullchecks that are just for the sake of catching problems early. For instance, if you null check a character to see if they're alive, that's okay. If you during that check that the GameManager you get the player from isn't null, that's insane, because there's no reason the game manager would just randomly be null, it's existed the whole time. We do NOT nullcheck every variable we access.

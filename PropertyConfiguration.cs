@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using ScheduleOne.Property;
 using ScheduleOne.Delivery; // For LoadingDock
 using ScheduleOne.Interaction; // For InteractableToggleable
-using ScheduleOne.Tiles; // For ModularSwitch
+using ScheduleOne.Tiles;
+using ScheduleOne.Misc;
+using FluffyUnderware.DevTools.Extensions; // For ModularSwitch
 // --- End Game Namespaces ---
 
 namespace ManorMod
@@ -17,31 +19,79 @@ namespace ManorMod
     /// </summary>
     public abstract class PropertyConfiguration : MonoBehaviour
     {
-        [Header("Base Property Settings")]
-        [Tooltip("Price the property will be set to.")]
-        [SerializeField] protected float propertyPrice = 100000f;
-        [Tooltip("Employee capacity the property will be set to.")]
-        [SerializeField] protected int propertyEmployeeCapacity = 10;
+        const string AgencyWhiteboardPath = "/Map/Container/RE Office/Interior/Whiteboard";
 
-        [Header("Common Prefab References (Assign in Inspector)")]
-        [Tooltip("Loading docks that belong to this property.")]
-        [SerializeField] protected LoadingDock[] loadingDocks = System.Array.Empty<LoadingDock>();
-        [Tooltip("NPC spawn point transform for this property.")]
-        [SerializeField] protected Transform npcSpawnPoint = null;
-        [Tooltip("Modular switches within this property prefab.")]
-        [SerializeField] protected ModularSwitch[] switches = System.Array.Empty<ModularSwitch>();
-        [Tooltip("Interactable toggleables within this property prefab.")]
-        [SerializeField] protected InteractableToggleable[] toggleables = System.Array.Empty<InteractableToggleable>();
-        [Tooltip("Array of transforms representing additional employee idle points.")]
-        [SerializeField] protected Transform[] employeeIdlePoints = System.Array.Empty<Transform>();
+
+        Property sceneProperty = null;
+        public Property SceneProperty 
+        {
+            get 
+            {
+                if (sceneProperty == null)
+                    sceneProperty = PropertyManager.Instance?.GetProperty(propertyCode);
+
+                return sceneProperty;
+            }
+        }
+
+
+        [Tooltip("The property-code of the property to configure.")]
+        public string propertyCode = "manor";
+
+
+        [Tooltip("Price the property will be set to.")]
+        public float propertyPrice = 100000f;
+
+
+        [Tooltip("Employee capacity the property will be set to. YOU MUST HAVE ENOUGH IDLE POINTS FOR THIS MANY EMPLOYEES OR IT WILL CRASH WHEN YOU HIRE PEOPLE.")]
+        public int propertyEmployeeCapacity = 10;
+
+
+        [Tooltip("If true, the default employee idle points will be replaced with the ones provided, instead of combining them.")]
+        public bool ReplaceEmployeeIdlePoints = true;
+
+
+        [Tooltip("Employee idle points to add or replace the default ones with.")]
+        public Transform[] employeeIdlePoints = new Transform[0];
+
+
+        [Tooltip("Loading docks to add")]
+        public LoadingDock[] ModLoadingDocks = new LoadingDock[0];
+
+
+        [Tooltip("NPC spawn point transform to replace the default one with.")]
+        public Transform npcSpawnPoint = null;
+
+
+        [Tooltip("Modular switches to register.")]
+        public ModularSwitch[] switches = new ModularSwitch[0];
+
+
+        [Tooltip("Interactable toggleables to register.")]
+        public InteractableToggleable[] toggleables = new InteractableToggleable[0];
+
+
+        [Tooltip("Reference to the listing poster object to be added to the agency whiteboard.")]
+        [SerializeField] public Transform ListingPosterTransform = null;
+
+        bool hasRun = false;
+
+
+        public void Awake() 
+        {
+            if (SceneProperty != null && !hasRun)
+                ReconfigureProperty(SceneProperty);
+        }
 
         /// <summary>
         /// Configures the provided Property component using the serialized fields.
-        /// Called by derived classes in Start() after finding the parent Property.
+        /// Called in Start()
         /// </summary>
-        protected virtual void ConfigureProperty(Property property)
+        public virtual void ReconfigureProperty(Property property)
         {
-            if (property == null) return;
+            if (SceneProperty == null) return;
+
+            hasRun = true;
 
             // Basic Stats
             property.Price = propertyPrice;
@@ -51,98 +101,76 @@ namespace ManorMod
             property.NPCSpawnPoint = npcSpawnPoint;
 
             // Loading Docks
-            ConfigureLoadingDocks(property);
+            RegisterLoadingDocks(property);
 
             // Switches
-            ConfigureSwitches(property);
+            RegisterSwitches(property);
 
             // Toggleables
-            ConfigureToggleables(property);
+            RegisterToggleables(property);
 
             // Idle Points
-            MergeIdlePoints(property);
+            RegisterIdlePoints(property);
+
+            // Listing Poster
+            MoveListingPosterToWhiteboard();
+
+            // Save Point
+            RegisterSavePoint(property);
         }
 
         // --- Helper Configuration Methods ---
 
-        private void ConfigureLoadingDocks(Property property)
+        private void RegisterLoadingDocks(Property property)
         {
-            // Assuming Property.LoadingDocks is List<LoadingDock>
-            if (loadingDocks == null || loadingDocks.Length == 0)
-            {
-                if (property.LoadingDocks != null && property.LoadingDocks.Count > 0) property.LoadingDocks.Clear();
-                else if (property.LoadingDocks == null) property.LoadingDocks = new List<LoadingDock>();
-                return;
-            }
-            foreach (var dock in loadingDocks) if (dock != null) dock.ParentProperty = property;
-            property.LoadingDocks = new List<LoadingDock>(loadingDocks);
-            // If T[]: property.LoadingDocks = loadingDocks;
+            // Set each docks ParentProperty to be the property
+            foreach (var dock in ModLoadingDocks.Where(d => d != null))
+                dock.ParentProperty = property;
+
+            // Make sure the property has a LoadingDocks array
+            if (property.LoadingDocks == null)
+                property.LoadingDocks = new LoadingDock[0];
+
+            // add loading docks to the property
+            property.LoadingDocks.AddRange(ModLoadingDocks);
         }
 
-        private void ConfigureSwitches(Property property)
+        private void RegisterSwitches(Property property)
         {
-            // Assuming Property.Switches is List<ModularSwitch>
-            if (switches == null || switches.Length == 0)
-            {
-                if (property.Switches != null && property.Switches.Count > 0) property.Switches.Clear();
-                else if (property.Switches == null) property.Switches = new List<ModularSwitch>();
-                return;
-            }
-            property.Switches = new List<ModularSwitch>(switches);
-            // If T[]: property.Switches = switches;
-            // Listeners likely handled by Property.Awake
+
+            if (property.Switches == null)
+                property.Switches = new();
+
+            property.Switches.AddRange(switches);
         }
 
-        private void ConfigureToggleables(Property property)
+        private void RegisterToggleables(Property property)
         {
-            // Assuming Property.Toggleables is List<InteractableToggleable>
-             if (toggleables == null || toggleables.Length == 0)
-             {
-                 if (property.Toggleables != null && property.Toggleables.Count > 0) property.Toggleables.Clear();
-                 else if (property.Toggleables == null) property.Toggleables = new List<InteractableToggleable>();
-                 return;
-             }
-            property.Toggleables = new List<InteractableToggleable>(toggleables);
-            // If T[]: property.Toggleables = toggleables;
+            
+            if (property.Toggleables == null)
+                property.Toggleables = new();
 
-            // Re-attach listeners - safer to include
-            foreach (var toggleable in property.Toggleables)
-            {
-                if (toggleable != null)
-                {
-                    System.Action toggleAction = () => PropertyToggleableActioned(property, toggleable);
-                    toggleable.onToggle.RemoveListener(toggleAction);
-                    toggleable.onToggle.AddListener(toggleAction);
-                }
-            }
+            property.Toggleables.AddRange(toggleables);
         }
 
-        private void PropertyToggleableActioned(Property property, InteractableToggleable toggleable)
+        private void RegisterIdlePoints(Property property)
         {
-             if (property != null && toggleable != null) property.HasChanged = true;
+            if (property.EmployeeIdlePoints == null || ReplaceEmployeeIdlePoints)
+                property.EmployeeIdlePoints = new Transform[0];
+
+            property.EmployeeIdlePoints.AddRange(employeeIdlePoints);
         }
 
-        private void MergeIdlePoints(Property property)
+        private void MoveListingPosterToWhiteboard()
         {
-            // Assuming List<Transform>
-            var currentPoints = property.EmployeeIdlePoints ?? new List<Transform>();
-            int addedCount = 0;
-            if (employeeIdlePoints != null)
-            {
-                foreach (Transform point in employeeIdlePoints)
-                {
-                    if (point != null && !currentPoints.Contains(point))
-                    {
-                        currentPoints.Add(point);
-                        addedCount++;
-                    }
-                }
-            }
-            if (addedCount > 0 || property.EmployeeIdlePoints == null)
-            {
-                 property.EmployeeIdlePoints = currentPoints;
-                 // If T[]: property.EmployeeIdlePoints = currentPoints.ToArray();
-            }
+            if (ListingPosterTransform == null) return;
+            GameObject targetWhiteboard = GameObject.Find(AgencyWhiteboardPath);
+            ListingPosterTransform.SetParent(targetWhiteboard.transform, true);
+        }
+
+        private void RegisterSavePoint(Property property)
+        {
+            // mmmmm we may not actually have to do anything with this, I think the games SavePoint class is self-sufficient
         }
     }
-} 
+}
