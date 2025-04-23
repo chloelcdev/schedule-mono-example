@@ -2,12 +2,7 @@ using MelonLoader;
 using UnityEngine;
 using System.Collections; // Added for IEnumerator
 using ScheduleOne.Property; // Added for Property type
-
-using FishNet.Object;
-using FishNet.Managing;
-using FishNet.Managing.Server;
 using FishNet;
-using FishNet.Connection; // Base FishNet namespace
 
 
 [assembly: MelonInfo(typeof(ManorMod.MainMod), ManorMod.BuildInfo.Name, ManorMod.BuildInfo.Version, ManorMod.BuildInfo.Author, ManorMod.BuildInfo.DownloadLink)]
@@ -29,7 +24,6 @@ namespace ManorMod
     public class MainMod : MelonMod
     {
         // Constants
-        private const string BundleName = "chloemanorsetup";
         private const string PrefabName = "ManorSetup-Chloe";
         private const string TargetSceneName = "Main";
         private const string ManorPropertyCode = "manor";
@@ -74,8 +68,8 @@ namespace ManorMod
 
         private IEnumerator SetupSequence()
         {
-            if (!InstanceFinder.IsHost)
-                yield break;
+            //if (!InstanceFinder.IsHost)
+            //    yield break;
 
 
             if (SceneProperty == null)

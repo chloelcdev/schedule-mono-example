@@ -10,12 +10,22 @@
 	<ItemGroup>
 		<PackageReference Include="LavaGang.MelonLoader" Version="0.7.0" />
 		<PackageReference Include="Lib.Harmony" Version="2.3.5" />
-		<PackageReference Include="FishNetV3.CodeGenerator.MSBuild" Version="1.0.0-beta.5" PrivateAssets="all" ExcludeAssets="runtime" />
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.5.0-beta.1" PrivateAssets="all" />
 	</ItemGroup>
 
 	<ItemGroup>
+    <Reference Include="FishNet Runtime" Publicize="true">
+      <HintPath>libs\FishNet.Runtime.dll</HintPath>
+    </Reference>
+    
+    <Reference Include="mscorlib">
+      <HintPath>libs\mscorlib.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <HintPath>libs\System.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>libs\UnityEngine.dll</HintPath>
@@ -29,9 +39,6 @@
 		<Reference Include="Assembly-CSharp-firstpass">
 		  <HintPath>libs\Assembly-CSharp-firstpass.dll</HintPath>
 		</Reference>
-		<Reference Include="FishNet.Runtime">
-		  <HintPath>libs\FishNet.Runtime.dll</HintPath>
-		</Reference>
 		<Reference Include="S1API">
 		  <HintPath>libs\S1API.Mono.dll</HintPath>
 		</Reference>
@@ -39,4 +46,8 @@
 		  <HintPath>libs\UnityEngine.AssetBundleModule.dll</HintPath>
 		</Reference>
 	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="echo Copying $(TargetFileName) to Schedule I Mods folder...&#xD;&#xA;xcopy &quot;$(TargetPath)&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\Schedule I\Mods\&quot; /Y /I&#xD;&#xA;&#xD;&#xA;echo Copying $(TargetFileName) to Unity modding project Assets folder...&#xD;&#xA;xcopy &quot;$(TargetPath)&quot; &quot;C:\Users\chloe\Documents\repos\ScheduleOne_UnityProject\Assets\&quot; /Y /I&#xD;&#xA;&#xD;&#xA;echo Post-build copy operations complete." />
+	</Target>
 </Project>

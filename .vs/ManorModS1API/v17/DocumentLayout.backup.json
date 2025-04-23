@@ -3,16 +3,25 @@
   "WorkspaceRootPath": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0CC3F6A3-9913-4026-B601-E86E56B30C6D}|ManorMod.csproj|c:\\users\\chloe\\documents\\repos\\manormods1api\\mainmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CC3F6A3-9913-4026-B601-E86E56B30C6D}|ManorMod.csproj|solutionrelative:mainmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0CC3F6A3-9913-4026-B601-E86E56B30C6D}|ManorMod.csproj|c:\\users\\chloe\\documents\\repos\\manormods1api\\manormod.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{0CC3F6A3-9913-4026-B601-E86E56B30C6D}|ManorMod.csproj|solutionrelative:manormod.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CC3F6A3-9913-4026-B601-E86E56B30C6D}|ManorMod.csproj|c:\\users\\chloe\\documents\\repos\\manormods1api\\manorconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CC3F6A3-9913-4026-B601-E86E56B30C6D}|ManorMod.csproj|solutionrelative:manorconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chloe\\.nuget\\packages\\fishnetv3.codegenerator.msbuild\\1.0.0-beta.10\\build\\FishNetV3.CodeGenerator.MSBuild.props||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chloe\\.nuget\\packages\\fishnetv3.codegenerator.msbuild\\1.0.0-beta.5\\build\\FishNetV3.CodeGenerator.MSBuild.props||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CC3F6A3-9913-4026-B601-E86E56B30C6D}|ManorMod.csproj|c:\\users\\chloe\\documents\\repos\\manormods1api\\propertyconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CC3F6A3-9913-4026-B601-E86E56B30C6D}|ManorMod.csproj|solutionrelative:propertyconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CC3F6A3-9913-4026-B601-E86E56B30C6D}|ManorMod.csproj|c:\\users\\chloe\\documents\\repos\\manormods1api\\mainmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CC3F6A3-9913-4026-B601-E86E56B30C6D}|ManorMod.csproj|solutionrelative:mainmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CC3F6A3-9913-4026-B601-E86E56B30C6D}|ManorMod.csproj|c:\\users\\chloe\\documents\\repos\\manormods1api\\dialoguepatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,50 +35,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ManorMod",
-              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\ManorMod.csproj",
-              "RelativeDocumentMoniker": "ManorMod.csproj",
-              "ToolTip": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\ManorMod.csproj",
-              "RelativeToolTip": "ManorMod.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-22T21:41:11.192Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ManorConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\ManorConfiguration.cs",
-              "RelativeDocumentMoniker": "ManorConfiguration.cs",
-              "ToolTip": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\ManorConfiguration.cs",
-              "RelativeToolTip": "ManorConfiguration.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T20:42:11.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DialoguePatcher.cs",
-              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\DialoguePatcher.cs",
-              "RelativeDocumentMoniker": "DialoguePatcher.cs",
-              "ToolTip": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\DialoguePatcher.cs",
-              "RelativeToolTip": "DialoguePatcher.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T19:16:41.629Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -77,16 +47,88 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FishNetV3.CodeGenerator.MSBuild.props",
+              "DocumentMoniker": "C:\\Users\\chloe\\.nuget\\packages\\fishnetv3.codegenerator.msbuild\\1.0.0-beta.10\\build\\FishNetV3.CodeGenerator.MSBuild.props",
+              "RelativeDocumentMoniker": "..\\..\\..\\.nuget\\packages\\fishnetv3.codegenerator.msbuild\\1.0.0-beta.10\\build\\FishNetV3.CodeGenerator.MSBuild.props",
+              "ToolTip": "C:\\Users\\chloe\\.nuget\\packages\\fishnetv3.codegenerator.msbuild\\1.0.0-beta.10\\build\\FishNetV3.CodeGenerator.MSBuild.props",
+              "RelativeToolTip": "..\\..\\..\\.nuget\\packages\\fishnetv3.codegenerator.msbuild\\1.0.0-beta.10\\build\\FishNetV3.CodeGenerator.MSBuild.props",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-04-23T10:51:28.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAF8JAAAAAAAAAAD4v20JAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-04-23T10:42:12.409Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ManorMod.csproj",
+              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\ManorMod.csproj",
+              "RelativeDocumentMoniker": "ManorMod.csproj",
+              "ToolTip": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\ManorMod.csproj",
+              "RelativeToolTip": "ManorMod.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-23T10:39:48.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FishNetV3.CodeGenerator.MSBuild.props",
+              "DocumentMoniker": "C:\\Users\\chloe\\.nuget\\packages\\fishnetv3.codegenerator.msbuild\\1.0.0-beta.5\\build\\FishNetV3.CodeGenerator.MSBuild.props",
+              "RelativeDocumentMoniker": "..\\..\\..\\.nuget\\packages\\fishnetv3.codegenerator.msbuild\\1.0.0-beta.5\\build\\FishNetV3.CodeGenerator.MSBuild.props",
+              "ToolTip": "C:\\Users\\chloe\\.nuget\\packages\\fishnetv3.codegenerator.msbuild\\1.0.0-beta.5\\build\\FishNetV3.CodeGenerator.MSBuild.props",
+              "RelativeToolTip": "..\\..\\..\\.nuget\\packages\\fishnetv3.codegenerator.msbuild\\1.0.0-beta.5\\build\\FishNetV3.CodeGenerator.MSBuild.props",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-04-23T10:37:04.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PropertyConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\PropertyConfiguration.cs",
+              "RelativeDocumentMoniker": "PropertyConfiguration.cs",
+              "ToolTip": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\PropertyConfiguration.cs",
+              "RelativeToolTip": "PropertyConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T22:50:08.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DialoguePatcher.cs",
+              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\DialoguePatcher.cs",
+              "RelativeDocumentMoniker": "DialoguePatcher.cs",
+              "ToolTip": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\DialoguePatcher.cs",
+              "RelativeToolTip": "DialoguePatcher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T19:16:41.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "MainMod.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\MainMod.cs",
               "RelativeDocumentMoniker": "MainMod.cs",
               "ToolTip": "C:\\Users\\chloe\\Documents\\repos\\ManorModS1API\\MainMod.cs",
               "RelativeToolTip": "MainMod.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T14:10:23.653Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T14:10:23.653Z"
             }
           ]
         }
